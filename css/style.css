@@ -1,0 +1,105 @@
+/* #region fonts*/
+/* Regular - 400 */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Medium - 500 */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-Medium.woff2') format('woff2');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SemiBold - 600 */
+@font-face {
+    font-family: 'Poppins';
+    src: url('../fonts/Poppins/Poppins-SemiBold.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* SemiBold - 600 */
+@font-face {
+    font-family: 'Cal Sans';
+    src: url('../fonts/cal_sans/CalSans-SemiBold.woff2') format('woff2'), url('../fonts/cal_sans/CalSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* #endregion */
+
+/* # region common styles */
+body {
+    background-color: #fff;
+    font-family: 'Poppins', Helvetica, Arial, sans-serif;
+    color: #666;
+    font-weight: 400;
+    height: 100vh;
+}
+
+.wrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+[class*="__container"] {
+    max-width: 1230px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* #endregion */
+
+/* #region header */
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.header__container {
+    padding-top: 61px;
+    padding-bottom: 61px;
+    display: flex;
+    align-items: center;
+    column-gap: 131px;
+}
+
+.header__logo {}
+
+.header__menu {}
+
+.menu {}
+
+.menu__list {
+    display: flex;
+    align-items: center;
+    column-gap: 56px;
+    row-gap: 15px;
+}
+
+.menu__item {}
+
+.menu__link {
+    color: rgba(18, 18, 18, 0.4);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+/* #endregion */
+
+.main {
+    flex: 1 1 auto;
+}

@@ -18,13 +18,15 @@ li {
 /* 3. Робимо картинки адаптивними (щоб не ламали макет) */
 img {
   max-width: 100%;
-  display: block; /* прибирає мікровідступ знизу */
+  display: block;
+  /* прибирає мікровідступ знизу */
 }
 
 /* 4. Скидаємо стилі посилань (щоб не були синіми та підкресленими) */
 a {
   text-decoration: none;
-  color: inherit; /* бере колір тексту від батьківського блоку */
+  color: inherit;
+  /* бере колір тексту від батьківського блоку */
   display: inline-block;
 }
 
@@ -35,7 +37,8 @@ body {
   -ms-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
-  -webkit-font-smoothing: antialiased; /* робить шрифти чіткішими */
+  -webkit-font-smoothing: antialiased;
+  /* робить шрифти чіткішими */
 }
 
 /* 6. Скидаємо стилі кнопок та полів вводу (щоб не було системних рамок) */

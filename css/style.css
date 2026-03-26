@@ -1,105 +1,443 @@
 /* #region fonts*/
 /* Regular - 400 */
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins/Poppins-Regular.woff2') format('woff2');
-    font-weight: 400;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Poppins';
+	src: url('../fonts/Poppins/Poppins-Regular.woff2') format('woff2');
+	font-weight: 400;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* Medium - 500 */
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins/Poppins-Medium.woff2') format('woff2');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Poppins';
+	src: url('../fonts/Poppins/Poppins-Medium.woff2') format('woff2');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* SemiBold - 600 */
 @font-face {
-    font-family: 'Poppins';
-    src: url('../fonts/Poppins/Poppins-SemiBold.woff2') format('woff2');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Poppins';
+	src: url('../fonts/Poppins/Poppins-SemiBold.woff2') format('woff2');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* SemiBold - 600 */
 @font-face {
-    font-family: 'Cal Sans';
-    src: url('../fonts/cal_sans/CalSans-SemiBold.woff2') format('woff2'), url('../fonts/cal_sans/CalSans-SemiBold.woff') format('woff');
-    font-weight: 600;
-    font-style: normal;
-    font-display: swap;
+	font-family: 'Cal Sans';
+	src: url('../fonts/cal_sans/CalSans-SemiBold.woff2') format('woff2'), url('../fonts/cal_sans/CalSans-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 /* #endregion */
 
 /* # region common styles */
 body {
-    background-color: #fff;
-    font-family: 'Poppins', Helvetica, Arial, sans-serif;
-    color: #666;
-    font-weight: 400;
-    height: 100vh;
+	background-color: #fff;
+	font-family: 'Poppins', Helvetica, Arial, sans-serif;
+	color: #666;
+	font-weight: 400;
+	min-height: 100vh;
 }
 
 .wrapper {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 [class*="__container"] {
-    max-width: 1230px;
-    margin: 0 auto;
-    padding: 0 15px;
+	max-width: 1230px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+.ibg {
+	position: relative;
+}
+
+.ibg img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	object-fit: cover;
 }
 
 /* #endregion */
 
 /* #region header */
 .header {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 
 .header__container {
-    padding-top: 61px;
-    padding-bottom: 61px;
-    display: flex;
-    align-items: center;
-    column-gap: 131px;
+	min-height: 152px;
+	display: flex;
+	align-items: center;
+	column-gap: 112px;
 }
 
-.header__logo {}
+.header__logo {
+	position: relative;
+	z-index: 1;
+}
+
+.header__logo img {
+	max-width: none;
+}
 
 .header__menu {}
 
 .menu {}
 
 .menu__list {
-    display: flex;
-    align-items: center;
-    column-gap: 56px;
-    row-gap: 15px;
+	display: flex;
+	align-items: center;
+	column-gap: 56px;
+	row-gap: 15px;
+	background-color: rgba(255, 255, 255, 0.8);
+	backdrop-filter: blur(10px);
+	position: relative;
+	z-index: 1;
+	padding: 10px 20px;
+	border-radius: 5px;
 }
 
 .menu__item {}
 
 .menu__link {
-    color: rgba(18, 18, 18, 0.4);
-    font-weight: 500;
-    line-height: 1.5;
+	color: rgba(18, 18, 18, 0.4);
+	font-weight: 500;
+	line-height: 1.5;
+	position: relative;
+}
+
+.menu__link::after {
+	content: '';
+	position: absolute;
+	width: 0;
+	height: 2px;
+	bottom: -4px;
+	left: 0;
+	background-color: #ff6428;
+	transition: width 0.3s ease;
+}
+
+.menu__link:hover::after {
+	width: 100%;
+}
+
+/* Mobile */
+@media (max-width: 767.98px) {
+	.menu__icon {
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 18px;
+		background: none;
+		border: none;
+	}
+
+	.menu__icon span,
+	.menu__icon::before,
+	.menu__icon::after {
+		content: "";
+		position: absolute;
+		right: 0;
+		width: 100%;
+		height: 2px;
+		background-color: #000;
+		transition: all 0.3s ease 0s;
+	}
+
+	.menu__icon::before {
+		top: 0;
+	}
+
+	.menu__icon::after {
+		bottom: 0;
+	}
+
+	.menu__icon span {
+		top: calc(50% - 1px);
+	}
+
+	/* Перетворення в хрестик */
+	.menu__icon._active span {
+		transform: scale(0);
+	}
+
+	.menu__icon._active::before {
+		transform: rotate(45deg);
+		top: 8px;
+	}
+
+	.menu__icon._active::after {
+		transform: rotate(-45deg);
+		bottom: 8px;
+	}
+
+	.menu {
+		position: fixed;
+		top: 0;
+		left: -100%;
+		width: 100%;
+		height: 100%;
+		background-color: #fff;
+		padding: 100px 30px 30px;
+		transition: left 0.3s ease 0s;
+		overflow: auto;
+	}
+
+	.menu._active::before {
+		content: "";
+		position: relative;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100px;
+		background-color: #fff;
+		box-shadow: 0px 2px 10px 0px rgba(0, 0, 0, 0.03);
+	}
+
+	.menu._active {
+		left: 0;
+	}
+
+	.menu__list {
+		padding: 30px 0 0 0;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.menu__link {
+		font-size: 24px;
+	}
+
+	/* Блокуємо скрол при відкритому меню */
+	body._lock {
+		overflow: hidden;
+	}
+
+	.header__container {
+		justify-content: center;
+	}
 }
 
 /* #endregion */
 
+/* #region page */
+.page__main {}
+
+/* #endregion */
+
+/* #region main section */
+
+.page__main {}
+
+.main {}
+
+.main__container {
+	display: flex;
+	padding-bottom: 160px;
+}
+
+.main__content {}
+
+.content-main {
+	flex: 0 1 647px;
+	align-self: flex-end;
+	padding-bottom: 60px;
+}
+
+.content-main__body {
+	max-width: 490px;
+	padding-right: 20px;
+}
+
+.content-main__title {
+	color: #121212;
+	font-family: "Cal Sans";
+	font-size: 56px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: 1.2;
+}
+
+.content-main__title span {
+	color: #FF6428;
+}
+
+.content-main__title:not(:last-child) {
+	margin-bottom: 8px;
+}
+
+.content-main__subtitle {
+	max-width: 399px;
+	color: #666;
+	font-style: normal;
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+.content-main__subtitle:not(:last-child) {
+	margin-bottom: 33px;
+}
+
+
+.content-main__items {
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.content-main__button {
+	display: inline-flex;
+	padding: 18px 48px;
+	height: 60px;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	border-radius: 40px;
+	background-color: #FF6428;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+
+.content-main__button:hover {
+	background-color: #e55a24;
+	/* Трохи темніший відтінок */
+	transform: scale(1.05);
+	/* Легке збільшення на 5% */
+	box-shadow: 0 10px 20px rgba(255, 100, 40, 0.3);
+	/* М'яка тінь у колір кнопки */
+}
+
+.content-main__button:active {
+	transform: scale(0.98);
+	/* Ефект натискання (кнопка вдавлюється) */
+}
+
+.content-main__icons {
+	display: flex;
+	gap: 28px;
+}
+
+.content-main__icon {
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.content-main__icon:hover {
+	transform: scale(1.15);
+	filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
+}
+
+.main__decor {}
+
+.decor-main {
+	flex: 0 1 672px;
+	margin-right: -120px;
+}
+
+.decor-main__image {
+	position: relative;
+	overflow: visible;
+}
+
+.decor-main__image::after {
+	content: "";
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	bottom: -40px;
+	left: 52%;
+	background-image: url("../img/main/subdecor.svg");
+}
+
+.decor-main__image img {
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
+	aspect-ratio: 672 / 586;
+	border-radius: 0 0 151px 360px;
+}
+
+@media (max-width: 1024px) {
+	.main__container {
+		padding-bottom: 50px;
+	}
+
+	.content-main {
+		flex: 0 0 490px;
+		align-self: flex-start;
+		padding-top: 120px;
+		padding-bottom: 0px;
+	}
+
+	.decor-main {
+		flex: 0 1 auto;
+	}
+}
+
+@media (max-width: 767.98px) {
+
+	/* Перебудовуємо Flex-блоки в колонку (flex-direction: column) */
+	/* Ховаємо меню в бургер */
+	.decor-main {
+		display: none;
+	}
+
+	.content-main {
+		flex: 1 1 auto;
+	}
+
+	.content-main__body {
+		padding-right: 0px;
+		margin: 0 auto;
+	}
+}
+
+@media (max-width: 479.98px) {
+
+	/* Мінімальні розміри шрифтів, кнопки на всю ширину */
+	.header__container {
+		min-height: 100px;
+	}
+
+	.content-main {
+		padding-top: 110px;
+	}
+
+
+	.content-main__title {
+		font-size: 35px;
+	}
+
+	.content-main__items {
+		flex-direction: column;
+	}
+
+	.content-main__button {
+		width: 100%;
+	}
+}
+
+
+/* #endregion */
+
 .main {
-    flex: 1 1 auto;
+	flex: 1 1 auto;
 }

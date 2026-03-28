@@ -493,6 +493,12 @@ body {
 	font-style: normal;
 	font-weight: 500;
 	line-height: 1.5;
+	transition: all 0.3s ease;
+}
+
+.store-captions__caption_view-all:hover {
+	color: #ff6428;
+	transform: translateX(5px);
 }
 
 .store-page__items {

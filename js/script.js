@@ -8,3 +8,13 @@ menuIcon.onclick = () => {
     menu.classList.toggle('_active');
     document.body.classList.toggle('_lock');
 };
+
+// swipperjs
+const swiper = new Swiper('.swiper', {
+  autoHeight: true,
+  pagination: {
+    el: '.swiper-pagination',
+    type: 'bullets',
+    clickable: true,
+  },
+});

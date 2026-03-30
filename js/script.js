@@ -12,23 +12,21 @@ menuIcon.onclick = () => {
 // swipperjs
 const swiper = new Swiper('.swiper', {
   speed: 1000,
+  loop: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
   breakpoints: {
-    // Коли ширина екрана >= 320px (мобільні)
     320: {
-      autoplay: false, // Вимикаємо автоплей
+      autoplay: false,
     },
-    // Коли ширина екрана >= 992px (десктоп)
     992: {
       autoplay: {
         delay: 4000,
-        disableOnInteraction: false,
         pauseOnMouseEnter: true,
       },
     }
-  },
-  autoplay: {
-    delay: 5000, // Пауза між слайдами (3000 мс = 3 секунди)
-    disableOnInteraction: false, // Продовжувати автоплей після того, як користувач сам перегорнув слайд
   },
   pagination: {
     el: '.swiper-pagination',

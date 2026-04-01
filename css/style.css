@@ -86,6 +86,12 @@ body {
 	color: #FF6428;
 }
 
+[data-aos="fade-up"] {
+	transform: translateY(40px);
+	opacity: 0;
+    transition-property: transform, opacity;
+}
+
 /* #endregion */
 
 /* #region header */
@@ -785,12 +791,14 @@ body {
 	background-color: #ffffff;
 	padding-top: 100px;
 	padding-bottom: 94px;
-	will-change: background-color; /* Підказуємо браузеру підготувати відеокарту */
+	will-change: background-color;
+	/* Підказуємо браузеру підготувати відеокарту */
 	transition: background-color 2.2s ease, color 2.2s ease;
 }
 
 .services.is-active {
-  background-color: #121212; /* Стає чорною */
+	background-color: #121212;
+	/* Стає чорною */
 }
 
 .services__container {}
@@ -800,7 +808,8 @@ body {
 }
 
 .services.is-active .services__title {
-	color: #fff; /* Стає білою при активації */
+	color: #fff;
+	/* Стає білою при активації */
 }
 
 .services__title:not(:last-child) {
@@ -1114,6 +1123,22 @@ body {
 }
 
 .body-app__item {}
+
+.body-app__item {
+	transition: all 0.3s ease;
+}
+
+.body-app__item:hover {
+	transform: translateY(-3px);
+	filter: contrast(1.1);
+	/* Замість яскравості можна додати контрасту */
+}
+
+.body-app__item:active {
+	transform: scale(0.98);
+	/* Ефект натискання (кнопка вдавлюється) */
+}
+
 
 .body-app__image-block {}
 

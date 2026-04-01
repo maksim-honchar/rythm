@@ -34,3 +34,24 @@ const swiper = new Swiper('.swiper', {
     clickable: true,
   },
 });
+
+// changed background-color services section
+const servicesSection = document.querySelector('.services');
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      servicesSection.classList.add('is-active');
+    } else {
+      // Якщо хочеш, щоб при скролі вгору вона знову ставала білою:
+      servicesSection.classList.remove('is-active');
+    }
+  });
+}, { 
+  // Спрацює, коли 20% секції з'явиться знизу екрана
+  threshold: 0.2 
+});
+
+if (servicesSection) {
+  observer.observe(servicesSection);
+}

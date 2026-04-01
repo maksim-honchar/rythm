@@ -782,15 +782,25 @@ body {
 
 /* #region services section*/
 .services {
-	background-color: #121212;
+	background-color: #ffffff;
 	padding-top: 100px;
 	padding-bottom: 94px;
+	will-change: background-color; /* Підказуємо браузеру підготувати відеокарту */
+	transition: background-color 2.2s ease, color 2.2s ease;
+}
+
+.services.is-active {
+  background-color: #121212; /* Стає чорною */
 }
 
 .services__container {}
 
 .services__title {
-	color: #fff;
+	color: #000;
+}
+
+.services.is-active .services__title {
+	color: #fff; /* Стає білою при активації */
 }
 
 .services__title:not(:last-child) {
@@ -853,6 +863,8 @@ body {
 	line-height: 1.5;
 	text-transform: capitalize;
 }
+
+
 
 @media (max-width: 991.98px) {
 	.services {

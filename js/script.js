@@ -1,5 +1,10 @@
 "use strict"
 
+// animation on scroll
+AOS.init({
+  duration: 1200
+});
+
 const menuIcon = document.querySelector('.menu__icon');
 const menu = document.querySelector('.menu');
 

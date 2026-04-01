@@ -2,13 +2,14 @@
 
 // animation on scroll
 AOS.init({
-  duration: 1000,         
- easing: 'ease-out-cubic',    // Плавне зупинення
+  duration: 1000,
+  easing: 'ease-out-cubic',    // Плавне зупинення
   once: true,            // Не повторювати при скролі вгору (це дратує)
   offset: 100,           // Спрацює трохи раніше, ніж блок увійде в центр
   disable: 'mobile'      // На мобільних (твій Xeon це потягне, але на телефонах краще економити заряд)
 });
 
+// menu burger
 const menuIcon = document.querySelector('.menu__icon');
 const menu = document.querySelector('.menu');
 
@@ -17,6 +18,7 @@ menuIcon.onclick = () => {
   menu.classList.toggle('_active');
   document.body.classList.toggle('_lock');
 };
+
 
 // swipperjs
 const swiper = new Swiper('.swiper', {
@@ -47,6 +49,7 @@ const swiper = new Swiper('.swiper', {
     }
   },
 });
+
 
 // changed background-color services section
 const servicesSection = document.querySelector('.services');
